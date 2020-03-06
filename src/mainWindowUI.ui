@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>730</width>
+    <height>681</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>나눔바른고딕</family>
+    <pointsize>10</pointsize>
+    <weight>50</weight>
+    <italic>false</italic>
+    <bold>false</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">font: 10pt &quot;나눔바른고딕&quot;;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QGridLayout" name="gridLayout" rowstretch="20,70,10" columnstretch="70,30">
+    <property name="verticalSpacing">
+     <number>15</number>
+    </property>
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_2" stretch="20,30,20,30">
+      <item>
+       <widget class="QLabel" name="titleLabel">
+        <property name="text">
+         <string>제목</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="titleInput"/>
+      </item>
+      <item>
+       <widget class="QLabel" name="artistLabel">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>아티스트</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="artistInput"/>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="elideMode">
+       <enum>Qt::ElideNone</enum>
+      </property>
+      <widget class="QWidget" name="widget">
+       <property name="font">
+        <font>
+         <family>나눔바른고딕</family>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <attribute name="title">
+        <string>검색창</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="widget_2">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <attribute name="title">
+        <string>QUEUE</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="console">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>나눔바른고딕</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string extracomment="프로그램이 당신에게 보내는 편지입니다. 다정하게 대해주세요 :)"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>8</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>검색</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>730</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_F">
+    <property name="title">
+     <string>파일(&amp;F)</string>
+    </property>
+    <addaction name="saveDatabaseHotkey"/>
+   </widget>
+   <widget class="QMenu" name="menu_E">
+    <property name="title">
+     <string>편집(&amp;E)</string>
+    </property>
+    <addaction name="undoHotkey"/>
+    <addaction name="redoHotkey"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="moveFocusHotkey"/>
+   </widget>
+   <addaction name="menu_F"/>
+   <addaction name="menu_E"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="undoHotkey">
+   <property name="text">
+    <string>실행 취소</string>
+   </property>
+   <property name="toolTip">
+    <string>제일 마지막에 한 행동을 취소합니다</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="redoHotkey">
+   <property name="text">
+    <string>다시 실행</string>
+   </property>
+   <property name="toolTip">
+    <string>취소한 행동을 다시 실행합니다</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="saveDatabaseHotkey">
+   <property name="text">
+    <string>데이터베이스에 저장</string>
+   </property>
+   <property name="toolTip">
+    <string>데이터가 저장된 데이터베이스에 지금껏 변경한 데이터를 저장합니다</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="moveFocusHotkey">
+   <property name="text">
+    <string>포커스 검색창으로 옮기기</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>getDataFromApiBtnPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>770</x>
+     <y>128</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>571</x>
+     <y>195</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>inquireDataBtnPressed()</slot>
+  <slot>insertDataBtnPressed()</slot>
+  <slot>deleteDataBtnPressed()</slot>
+  <slot>updateDataBtnPressed()</slot>
+  <slot>getDataFromApiBtnPressed()</slot>
+ </slots>
+</ui>

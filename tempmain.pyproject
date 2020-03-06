@@ -1,0 +1,3 @@
+{
+    "files": ["src/resultTabQml.qml","src/mytablewidget.py","src/main.spec","src/musicLists.db","src/youtube.py","src/database.py","src/myresulttab.py","src/myqueuetab.py","src/mainWindowUI.ui","src/main.py","src/model.py","assets/NanumBarunGothic.ttf"]
+}

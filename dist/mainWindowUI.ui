@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>573</width>
+    <height>671</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">font: 10pt &quot;NanumGothic&quot;;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QGridLayout" name="gridLayout" rowstretch="20,70,10" columnstretch="70,30">
+    <property name="verticalSpacing">
+     <number>15</number>
+    </property>
+    <item row="0" column="1">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>13</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="inquireDataBtn">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="font">
+         <font>
+          <family>NanumGothic</family>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string extracomment="검색버튼으로 결과를 확인하세요!"/>
+        </property>
+        <property name="text">
+         <string>검색 (Enter)</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="autoDefault">
+         <bool>true</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="insertDataBtn">
+        <property name="text">
+         <string>추가 (Ctrl-I)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="deleteDataBtn">
+        <property name="text">
+         <string>삭제 (Del)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="updateDataBtn">
+        <property name="text">
+         <string>업데이트 (Ctrl-U)</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_2" stretch="20,30,20,30">
+      <item>
+       <widget class="QLabel" name="titleLabel">
+        <property name="text">
+         <string>제목</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="titleInput"/>
+      </item>
+      <item>
+       <widget class="QLabel" name="artistLabel">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>아티스트</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="artistInput"/>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="console">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>NanumGothic</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string extracomment="프로그램이 당신에게 보내는 편지입니다. 다정하게 대해주세요 :)"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="myTableWidget" name="tableWidget">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>false</bool>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectItems</enum>
+      </property>
+      <property name="showGrid">
+       <bool>true</bool>
+      </property>
+      <property name="rowCount">
+       <number>5</number>
+      </property>
+      <property name="columnCount">
+       <number>10</number>
+      </property>
+      <attribute name="verticalHeaderStretchLastSection">
+       <bool>false</bool>
+      </attribute>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <column>
+       <property name="text">
+        <string>Id</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Title</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Artist</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Count</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Recent</string>
+       </property>
+      </column>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>573</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_F">
+    <property name="title">
+     <string>파일(&amp;F)</string>
+    </property>
+    <addaction name="actionOpenDatabase"/>
+    <addaction name="saveDatabaseHotkey"/>
+   </widget>
+   <widget class="QMenu" name="menu_E">
+    <property name="title">
+     <string>편집(&amp;E)</string>
+    </property>
+    <addaction name="undoHotkey"/>
+    <addaction name="redoHotkey"/>
+    <addaction name="separator"/>
+    <addaction name="insertHotkey"/>
+    <addaction name="modifyCellHotkey"/>
+    <addaction name="deleteHotkey"/>
+    <addaction name="updateHotkey"/>
+    <addaction name="separator"/>
+    <addaction name="moveFocusHotkey"/>
+   </widget>
+   <addaction name="menu_F"/>
+   <addaction name="menu_E"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpenDatabase">
+   <property name="text">
+    <string>데이터베이스 불러오기</string>
+   </property>
+   <property name="toolTip">
+    <string>데이터가 저장된 데이터베이스를 불러옵니다</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="undoHotkey">
+   <property name="text">
+    <string>실행 취소</string>
+   </property>
+   <property name="toolTip">
+    <string>제일 마지막에 한 행동을 취소합니다</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="redoHotkey">
+   <property name="text">
+    <string>다시 실행</string>
+   </property>
+   <property name="toolTip">
+    <string>취소한 행동을 다시 실행합니다</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="saveDatabaseHotkey">
+   <property name="text">
+    <string>데이터베이스에 저장</string>
+   </property>
+   <property name="toolTip">
+    <string>데이터가 저장된 데이터베이스에 지금껏 변경한 데이터를 저장합니다</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="modifyCellHotkey">
+   <property name="text">
+    <string>데이터 수정</string>
+   </property>
+   <property name="toolTip">
+    <string>선택된 셀의 내용을 수정합니다</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="insertHotkey">
+   <property name="text">
+    <string>데이터 삽입</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="deleteHotkey">
+   <property name="text">
+    <string>데이터 삭제</string>
+   </property>
+   <property name="toolTip">
+    <string>선택한 데이터를 삭제합니다</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="updateHotkey">
+   <property name="text">
+    <string>데이터 업데이트</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="moveFocusHotkey">
+   <property name="text">
+    <string>포커스 검색창으로 옮기기</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>myTableWidget</class>
+   <extends>QTableWidget</extends>
+   <header>mytablewidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>insertDataBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>insertDataBtnPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>562</x>
+     <y>67</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>607</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>deleteDataBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>deleteDataBtnPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>562</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>526</x>
+     <y>609</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>updateDataBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>updateDataBtnPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>562</x>
+     <y>161</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>572</x>
+     <y>609</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>inquireDataBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>inquireDataBtnPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>562</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>210</x>
+     <y>602</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>artistInput</sender>
+   <signal>returnPressed()</signal>
+   <receiver>inquireDataBtn</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>374</x>
+     <y>161</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>562</x>
+     <y>46</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>titleInput</sender>
+   <signal>returnPressed()</signal>
+   <receiver>inquireDataBtn</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>171</x>
+     <y>76</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>562</x>
+     <y>46</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>inquireDataBtnPressed()</slot>
+  <slot>insertDataBtnPressed()</slot>
+  <slot>deleteDataBtnPressed()</slot>
+  <slot>updateDataBtnPressed()</slot>
+ </slots>
+</ui>
