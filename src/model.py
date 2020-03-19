@@ -47,7 +47,7 @@ class ResultModel(QAbstractListModel):
         현재 모델의 데이터를 반환한다
         """
         row = index.row()
-        print("[ResultModel] Row:{}, Role:{} 데이터 요청".format(row, role))
+        print("[ResultModel] Row:{}, Role:{} 데이터 요청".format(row, self._roleNames[role]))
 
         if role == self.ThumbnailUrlRole:
             return self.songs[row]["mod_thumbnailUrl"]

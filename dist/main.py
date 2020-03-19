@@ -46,7 +46,6 @@ class WindowClass(QMainWindow, form_class) :
         self.setGeometry(100, 100, 600, 500)
         self.titleInput.setFocus(True)
 
-        self.tableWidget.lineEditReturnPressedSig.connect(self._lineEditReturnPressedSlot)
         self.saveDatabaseHotkey.triggered.connect(self._saveDatabaseHotkey)
         self.insertHotkey.triggered.connect(self._insertHotkey)
         self.modifyCellHotkey.triggered.connect(self._modifyCellHotkey)

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>730</width>
-    <height>681</height>
+    <height>679</height>
    </rect>
   </property>
   <property name="font">
@@ -152,8 +152,6 @@
     <property name="title">
      <string>편집(&amp;E)</string>
     </property>
-    <addaction name="undoHotkey"/>
-    <addaction name="redoHotkey"/>
     <addaction name="separator"/>
     <addaction name="separator"/>
     <addaction name="moveFocusHotkey"/>
@@ -162,28 +160,6 @@
    <addaction name="menu_E"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="undoHotkey">
-   <property name="text">
-    <string>실행 취소</string>
-   </property>
-   <property name="toolTip">
-    <string>제일 마지막에 한 행동을 취소합니다</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Z</string>
-   </property>
-  </action>
-  <action name="redoHotkey">
-   <property name="text">
-    <string>다시 실행</string>
-   </property>
-   <property name="toolTip">
-    <string>취소한 행동을 다시 실행합니다</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Y</string>
-   </property>
-  </action>
   <action name="saveDatabaseHotkey">
    <property name="text">
     <string>데이터베이스에 저장</string>
@@ -213,12 +189,44 @@
    <slot>getDataFromApiBtnPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>770</x>
-     <y>128</y>
+     <x>719</x>
+     <y>99</y>
     </hint>
     <hint type="destinationlabel">
      <x>571</x>
      <y>195</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>titleInput</sender>
+   <signal>returnPressed()</signal>
+   <receiver>pushButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>382</x>
+     <y>85</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>572</x>
+     <y>92</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>artistInput</sender>
+   <signal>returnPressed()</signal>
+   <receiver>pushButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>421</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>621</x>
+     <y>87</y>
     </hint>
    </hints>
   </connection>

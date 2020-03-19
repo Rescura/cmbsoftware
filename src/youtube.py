@@ -5,12 +5,13 @@ import isodate
 
 APIKEY = 'AIzaSyCW46MBJpp66t8-l3QbLVjylQQacwPmTlc'
 
-def getDataFromYoutube(maxResult:int, f_title:str, f_artist:str, pageToken:str='')->str:
+def getDataFromYoutube(maxResult:int, f_title:str='', f_artist:str='', pageToken:str='')->str:
   """
   제목, 아티스트를 통해 유튜브 동영상의 videoId와 썸네일 주소를 반환함
   
   검색결과의 다음 페이지를 요청하는 nextPageToken과 받은 데이터를 반환한다.
   """
+
   snippetQueries = {
     "key": APIKEY,
     "part": "snippet",

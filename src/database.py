@@ -38,16 +38,17 @@ class dbHandler():
         # 음악 테이블이 존재하는지 확인해서 없으면 만든다
         self.cur.execute('''
             CREATE TABLE IF NOT EXISTS videoList (
+            thumbnailUrl TEXT NOT NULL,
             videoId TEXT UNIQUE,
             videoTitle TEXT,
-            videoDuration TEXT,
-            thumbnailUrl TEXT NOT NULL ,
-            count INTEGER DEFAULT 0,
-            recent TEXT DEFAULT '없음'); 
+            channelTitle TEXT
+            duration TEXT,
+            count INTEGER,
+            recent TEXT); 
             ''')
 
     def getDataFromDB(self, f_videoId):
-        query = '''SELECT videoId, count, recent FROM videoList WHERE videoId = ?'''
+        query = '''SELECT count, recent FROM videoList WHERE videoId = ?'''
         result =  self.con.execute(query, (f_videoId,)).fetchone()
         if result is None:
             print("[Database] 조회 결과 없음")
@@ -60,8 +61,7 @@ class dbHandler():
         finalData = []
         for data in f_ytdata:
             isInDb, dbData = self.getDataFromDB(data["mod_videoId"])
-            data["mod_count"] = dbData["mod_count"]
-            data["mod_recent"] = dbData["mod_recent"]
+            data.update(dbData)
             
             if isInDb:
                 dataFromBoth.append(data)
@@ -71,3 +71,20 @@ class dbHandler():
         finalData.extend(f_ytdata)
 
         return finalData
+
+    def getDataWithoutKeyword(self):
+        # TODO : fetchMore를 사용해서 적당량만 받아온후 리턴시키기
+        data = self.cur.execute("SELECT * FROM videoList ORDER BY RECENT DESC").fetchall()
+        result = []
+        for video in data:
+            singleData = {}
+            singleData["mod_thumbnailUrl"] = video[0]
+            singleData["mod_videoId"] = video[1]
+            singleData["mod_videoTitle"] = video[2]
+            singleData["mod_channelTitle"] = video[3]
+            singleData["mod_duration"] = video[4]
+            singleData["mod_count"] = video[5]
+            singleData["mod_recent"] = video[6]
+            result.append(singleData)
+
+        return result
